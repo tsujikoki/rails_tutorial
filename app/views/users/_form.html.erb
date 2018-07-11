@@ -1,0 +1,26 @@
+<%= form_for @user do |f| %>
+    <div>
+        名前：
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        性別：
+        <%= f.select :gender, User.genders.keys %>
+    </div>
+    <div>
+        生年月日：
+        <%= f.date_select :birthday, start_year: 1950, end_year: 2020 %>
+    </div>
+    <div>
+        出身地：
+        <%= f.text_field :hometown %>
+    </div>
+    <div>
+        備考：
+        <%= f.text_area :remarks %>
+    </div>
+    <div>
+    <%= f.submit "送信" %>
+    </div>
+    <%= link_to "一覧へ", users_path %>
+<% end %>
